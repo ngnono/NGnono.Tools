@@ -58,10 +58,10 @@ namespace NGnono.Tools.Dispatcher
 
                     if (t.EndHandler != null)
                     {
+                        dispatcher.DispatcherEndData = "OK";
                         foreach (ActionElement a in t.EndHandler.Actions)
                         {
-                            dispatcher.DispatcherEndData = "OK";
-                            ActionElement a1 = a;
+                            var a1 = a;
                             dispatcher.OnPublishedEventHandle += (s, e) =>
                             {
                                 //请求一个地址
