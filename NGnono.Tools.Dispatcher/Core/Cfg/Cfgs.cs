@@ -752,11 +752,6 @@ namespace NGnono.Tools.Dispatcher.Core.Cfg
             return true;
         }
 
-        [ConfigurationProperty("data", IsRequired = false)]
-        public string Text
-        {
-            get { return this["data"].ToString(); }
-            set { this["data"] = value; }
-        }
+        public string Text { get; private set; }
     }
 }
