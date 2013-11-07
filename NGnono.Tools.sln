@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NGnono.Tools.Dispatcher", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NGnono.Tools.ViewTemplate", "NGnono.Tools.ViewTemplate\NGnono.Tools.ViewTemplate.csproj", "{68A3779B-EA25-4A30-A873-4D9B94FDE912}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NGnono.Tools.Scheduler", "NGnono.Tools.Scheduler\NGnono.Tools.Scheduler.csproj", "{F501E673-D7C9-4071-87D7-7D5B717B2339}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{68A3779B-EA25-4A30-A873-4D9B94FDE912}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68A3779B-EA25-4A30-A873-4D9B94FDE912}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68A3779B-EA25-4A30-A873-4D9B94FDE912}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F501E673-D7C9-4071-87D7-7D5B717B2339}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F501E673-D7C9-4071-87D7-7D5B717B2339}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F501E673-D7C9-4071-87D7-7D5B717B2339}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F501E673-D7C9-4071-87D7-7D5B717B2339}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
