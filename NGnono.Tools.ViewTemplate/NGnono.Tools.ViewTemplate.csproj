@@ -4,13 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7120F38B-DAC2-4ADB-B862-CE46C9685864}</ProjectGuid>
+    <ProjectGuid>{68A3779B-EA25-4A30-A873-4D9B94FDE912}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NGnono.Tools.Dispatcher</RootNamespace>
-    <AssemblyName>NGnono.Tools.Dispatcher</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <RootNamespace>NGnono.Tools.ViewTemplate</RootNamespace>
+    <AssemblyName>NGnono.Tools.ViewTemplate</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -21,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -30,11 +32,23 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NVelocity">
+      <HintPath>..\packages\NVelocity.1.0.3\lib\NVelocity.dll</HintPath>
+    </Reference>
+    <Reference Include="RazorEngine">
+      <HintPath>..\packages\RazorEngine.3.4.0\lib\net45\RazorEngine.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.0.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,27 +56,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\Cfg\Cfgs.cs" />
-    <Compile Include="Core\IDispatcherFactory.cs" />
-    <Compile Include="Core\DefaultDispatcherFactory.cs" />
-    <Compile Include="Core\Model\DispatcherEndEvent.cs" />
-    <Compile Include="Core\Model\DispatcherSchemes.cs" />
-    <Compile Include="Core\Contract\IDispatcher.cs" />
-    <Compile Include="Core\Model\DispatcherEnd.cs" />
-    <Compile Include="Core\Impl\FTPDispatcher.cs" />
-    <Compile Include="Core\Impl\FileShareDispatcher.cs" />
-    <Compile Include="Core\Model\UriSchemes.cs" />
+    <Compile Include="DefaultViewEngineFactory.cs" />
+    <Compile Include="Core\IViewEngine.cs" />
+    <Compile Include="Core\NVelocityViewEngine.cs" />
+    <Compile Include="Core\RazorViewEngine.cs" />
+    <Compile Include="Core\TemplateType.cs" />
+    <Compile Include="IViewEngineFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="Cfgs\dispatcher.config">
+    <None Include="App.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Templates\测试页面1.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Configurations\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

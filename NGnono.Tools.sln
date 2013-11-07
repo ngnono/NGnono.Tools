@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "extens", "extens", "{2BB226
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NGnono.Tools.Dispatcher", "NGnono.Tools.Dispatcher\NGnono.Tools.Dispatcher.csproj", "{7120F38B-DAC2-4ADB-B862-CE46C9685864}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NGnono.Tools.ViewTemplate", "NGnono.Tools.ViewTemplate\NGnono.Tools.ViewTemplate.csproj", "{68A3779B-EA25-4A30-A873-4D9B94FDE912}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{7120F38B-DAC2-4ADB-B862-CE46C9685864}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7120F38B-DAC2-4ADB-B862-CE46C9685864}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7120F38B-DAC2-4ADB-B862-CE46C9685864}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68A3779B-EA25-4A30-A873-4D9B94FDE912}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68A3779B-EA25-4A30-A873-4D9B94FDE912}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68A3779B-EA25-4A30-A873-4D9B94FDE912}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68A3779B-EA25-4A30-A873-4D9B94FDE912}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
