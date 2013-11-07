@@ -1,7 +1,7 @@
-﻿using System;
-using Common.Logging;
+﻿using Common.Logging;
+using NGnono.Tools.Scheduler.Core;
 using Quartz;
-using Quartz.Impl;
+using System;
 using System.ServiceProcess;
 
 namespace NGnono.Tools.Scheduler
@@ -9,14 +9,13 @@ namespace NGnono.Tools.Scheduler
     partial class QuartzService : ServiceBase
     {
         private readonly ILog _logger;
-        private readonly IScheduler _scheduler;
+        private readonly QuartzManager _quartzManager;
 
         public QuartzService()
         {
             InitializeComponent();
             _logger = LogManager.GetLogger(GetType());
-            ISchedulerFactory schedulerFactory = new StdSchedulerFactory();
-            _scheduler = schedulerFactory.GetScheduler();
+            _quartzManager = QuartzManager.Current;
         }
 
         public void ConsoleDebug()
@@ -29,24 +28,26 @@ namespace NGnono.Tools.Scheduler
 
         protected override void OnStart(string[] args)
         {
-            _scheduler.Start();
+            _quartzManager.Start();
             _logger.Info("Quartz服务成功启动");
         }
 
         protected override void OnStop()
         {
-            _scheduler.Shutdown();
+            _quartzManager.Stop();
             _logger.Info("Quartz服务成功终止");
         }
 
         protected override void OnPause()
         {
-            _scheduler.PauseAll();
+            _quartzManager.Pause();
+            _logger.Info("Quartz服务成功暂停");
         }
 
         protected override void OnContinue()
         {
-            _scheduler.ResumeAll();
+            _quartzManager.Continue();
+            _logger.Info("Quartz服务成功恢复");
         }
     }
 }
