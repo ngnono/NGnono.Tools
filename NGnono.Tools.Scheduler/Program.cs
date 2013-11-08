@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using NGnono.Framework.ServiceLocation;
+using NGnono.Tools.Scheduler.Core;
 using Quartz;
 
 namespace NGnono.Tools.Scheduler
@@ -10,6 +12,8 @@ namespace NGnono.Tools.Scheduler
     {
         static void Main(string[] args)
         {
+
+            IocInit();
 #if !DEBUG
             var servicesToRun = new System.ServiceProcess.ServiceBase[] 
                 { 
@@ -20,6 +24,13 @@ namespace NGnono.Tools.Scheduler
 
             new QuartzService().ConsoleDebug();
 #endif
+        }
+
+
+        private static void IocInit()
+        {
+            ServiceLocator.Current.Register<StdQuartzJob, StdQuartzJob>();
+            ServiceLocator.Current.Register<Run, Run>();
         }
     }
 

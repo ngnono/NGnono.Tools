@@ -28,6 +28,15 @@
       <recover>false</recover>
     </job>
 
+    <job>
+      <name>IocJob</name>
+      <group>DeomJobGroup</group>
+      <description>Quartz.Net示例任务3</description>
+      <job-type>NGnono.Tools.Scheduler.Core.StdQuartzJob,NGnono.Tools.Scheduler</job-type>
+      <durable>true</durable>
+      <recover>false</recover>
+    </job>
+
     <!--定义示例任务1 触发器 每30秒执行一次DemoJob1任务-->
     <trigger>
       <cron>
@@ -38,6 +47,17 @@
         <cron-expression>0/30 * * * * ?</cron-expression>
       </cron>
     </trigger>
+
+    <trigger>
+      <cron>
+        <name>IocJobTrigger</name>
+        <group>DeomJobTriggerGroup</group>
+        <job-name>IocJob</job-name>
+        <job-group>DeomJobGroup</job-group>
+        <cron-expression>0/30 * * * * ?</cron-expression>
+      </cron>
+    </trigger>
+    
 
     <!--定义示例任务2 触发器 每分钟执行一次DemoJob2任务-->
     <trigger>

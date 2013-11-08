@@ -1,6 +1,8 @@
 ﻿using Common.Logging;
+using NGnono.Framework.ServiceLocation;
 using Quartz;
 using Quartz.Impl;
+using Quartz.Simpl;
 using System;
 using System.Collections.Generic;
 
@@ -9,7 +11,7 @@ namespace NGnono.Tools.Scheduler.Core
     /// <summary>
     /// 计划任务管理
     /// </summary>
-    internal class QuartzManager
+    public class QuartzManager
     {
         /// <summary>
         /// 计划任务
@@ -26,6 +28,8 @@ namespace NGnono.Tools.Scheduler.Core
             _logger = LogManager.GetLogger(GetType());
             ISchedulerFactory schedulerFactory = new StdSchedulerFactory();
             _scheduler = schedulerFactory.GetScheduler();
+
+            _scheduler.JobFactory = new IocJobFactory(ServiceLocator.Current, new SimpleJobFactory());
         }
 
         public static QuartzManager Current
@@ -38,9 +42,9 @@ namespace NGnono.Tools.Scheduler.Core
                     {
                         if (_current == null)
                         {
-// ReSharper disable PossibleMultipleWriteAccessInDoubleCheckLocking
+                            // ReSharper disable PossibleMultipleWriteAccessInDoubleCheckLocking
                             _current = new QuartzManager();
-// ReSharper restore PossibleMultipleWriteAccessInDoubleCheckLocking
+                            // ReSharper restore PossibleMultipleWriteAccessInDoubleCheckLocking
                         }
                     }
                 }
