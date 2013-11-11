@@ -16,8 +16,6 @@ namespace NGnono.Tools.Scheduler.Core
 {
     public class Run
     {
-
-
         public Run()
         {
             var log = LogManager.GetLogger(GetType());

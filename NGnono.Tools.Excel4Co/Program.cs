@@ -65,7 +65,7 @@ namespace NGnono.Tools.Excel4Co
                 var headerRow = sheet.GetRow(0);
                 var cellCount = headerRow.LastCellNum;
 
-                for (var j = (sheet.FirstRowNum + 1); j < sheet.LastRowNum; j++)
+                for (var j = (sheet.FirstRowNum + 1); j <= sheet.LastRowNum; j++)
                 {
                     var row = sheet.GetRow(j);
                     var first = true;

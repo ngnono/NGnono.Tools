@@ -41,6 +41,7 @@ namespace NGnono.Tools.Scheduler
     {
         //使用Common.Logging.dll日志接口实现日志记录
         private static readonly Common.Logging.ILog logger = Common.Logging.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         #region IJob 成员
 
         public void Execute(IJobExecutionContext context)
