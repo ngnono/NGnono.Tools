@@ -214,7 +214,6 @@ namespace NGnono.Tools.Dispatcher.Core.Impl
             }
 
             requestStream.Close();
-            mem.Close();
             mem.Dispose();
             return true;
         }
@@ -255,7 +254,6 @@ namespace NGnono.Tools.Dispatcher.Core.Impl
 
             requestStream.Close();
             this.ftpRequest.GetResponse();
-            mem.Close();
             mem.Dispose();
             return true;
         }
@@ -312,9 +310,9 @@ namespace NGnono.Tools.Dispatcher.Core.Impl
                 FtpWebResponse response = (FtpWebResponse)request.GetResponse();
                 response.Close();
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
-                throw ex;
+                throw;
             }
         }
 
@@ -371,7 +369,7 @@ namespace NGnono.Tools.Dispatcher.Core.Impl
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw;
             }
             finally
             {
@@ -430,13 +428,12 @@ namespace NGnono.Tools.Dispatcher.Core.Impl
                     }
                 }
 
-                sr.Close();
                 sr.Dispose();
                 response.Close();
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw;
             }
 
             return result;
@@ -482,7 +479,7 @@ namespace NGnono.Tools.Dispatcher.Core.Impl
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw;
             }
 
             return infos;

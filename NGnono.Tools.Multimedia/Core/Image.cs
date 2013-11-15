@@ -180,7 +180,6 @@ namespace NGnono.Tools.Multimedia.Core
             using (var exeProcess = Process.Start(startInfo))//Process.Start(System.IO.Path.Combine(pathImageMagick,appImageMagick),fileArgs))
             {
                 exeProcess.WaitForExit();
-                exeProcess.Close();
             }
         }
     }
@@ -450,9 +449,7 @@ namespace NGnono.Tools.Multimedia.Core
             }
             catch (Exception ex)
             {
-
-
-                throw ex;
+                throw ;
             }
 
 
