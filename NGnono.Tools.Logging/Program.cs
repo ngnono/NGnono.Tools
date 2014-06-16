@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 
 //1.
-[assembly: log4net.Config.XmlConfigurator(Watch = true)]
+[assembly: log4net.Config.XmlConfigurator(Watch = true,ConfigFile = "log4net.config")]
 namespace NGnono.Tools.Logging
 {
     class Program
