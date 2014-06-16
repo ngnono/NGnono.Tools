@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NGnono.Tools.Scheduler", "N
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NGnono.Tools.Multimedia", "NGnono.Tools.Multimedia\NGnono.Tools.Multimedia.csproj", "{2CBD9C5D-2497-4B81-BC6B-E96F53D24503}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NGnono.Tools.Logging", "NGnono.Tools.Logging\NGnono.Tools.Logging.csproj", "{588FD74F-002D-4553-8C21-AA2A0CE2006E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{2CBD9C5D-2497-4B81-BC6B-E96F53D24503}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2CBD9C5D-2497-4B81-BC6B-E96F53D24503}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2CBD9C5D-2497-4B81-BC6B-E96F53D24503}.Release|Any CPU.Build.0 = Release|Any CPU
+		{588FD74F-002D-4553-8C21-AA2A0CE2006E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{588FD74F-002D-4553-8C21-AA2A0CE2006E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{588FD74F-002D-4553-8C21-AA2A0CE2006E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{588FD74F-002D-4553-8C21-AA2A0CE2006E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
